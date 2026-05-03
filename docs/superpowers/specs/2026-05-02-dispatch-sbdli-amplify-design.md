@@ -1,7 +1,7 @@
 # Studio B Marketing Stack — Design Spec
 
 **Date:** 2026-05-02  
-**Scope:** Full newsletter/social-first marketing stack for all Studio B service brands: Consulting, Capital, and Build — plus Kevin's personal brand at bibelhausen.com. Covers social presence, newsletter infrastructure, website layer, CRM + attribution, and Amplify content engine (including Amplify-Content dialogue mode + podcast production).  
+**Scope:** Full newsletter/social-first marketing stack for all Studio B service brands: Consulting, Capital, and Build — plus Kevin's personal brand at bibelhausen.com. Covers social presence, newsletter infrastructure, website layer, CRM + attribution, and Amplify content engine (including Amplify-Content dialogue mode + video production via YouTube).  
 **Repos affected:** `consulting-b-studio`, `capital-b-studio`, `build-b-studio` (new), `b-studio-website` (hub redesign), `bibelhausen-com` (new), `amplify` (voice configs + signal sources)  
 **Out of scope:** Bolt and AcuOps product marketing (separate motion). Amplify Console UI (M2, not yet built). Automated beehiiv→HubSpot content publishing bridge. SBDLI data pipeline changes (wasala repo).
 
@@ -55,11 +55,11 @@ Social proof → sells Bolt + AcuOps downstream
 | Newsletter | beehiiv (Max) | Issue drafting, subscriber management, custom domains |
 | Content engine | Amplify | Signal detection → full-issue drafts + social post drafts |
 | Dialogue / creation | Amplify-Content (Claude skill → M2 Console) | Kevin-initiated content sessions; podcast script generation |
-| Podcast | Transistor.fm | RSS + Apple Podcasts + Spotify distribution |
-| Podcast editing | Descript | AI-powered audio editing; one-click producer track removal |
+| Video | YouTube | Primary long-form video distribution; podcast audio as future add-on |
+| Video editing | Descript | AI-powered editing; transcript-driven cuts |
 | Social scheduling | Typefully | X.com thread scheduling from Amplify-Content output |
 | CRM | HubSpot | Subscriber → lead → client attribution for all pipelines |
-| AI voice | ElevenLabs | Producer voice for podcast; iterates privately before shipping |
+| AI voice | ElevenLabs | Producer voice for video content; iterates privately before shipping |
 | Websites | GitHub Pages | Conversion layer for all entities |
 | Editorial | Nael (director of marketing) | Voice calibration, final edit before Kevin approves |
 
@@ -164,10 +164,10 @@ Pub ID: `pub_e647b558-3a6e-4a29-87ff-c5fd2b566c35` (currently live at `brief.ben
 | Item | Value |
 |---|---|
 | Publication name | Build, by Studio B |
-| Custom domain | `build.b.studio` |
-| DNS — CNAME | `build` → `cname.beehiiv.com` |
+| Custom domain | `brief.build.b.studio` |
+| DNS — CNAME | `brief.build` → `cname.beehiiv.com` |
 | DNS — TXT | beehiiv ownership verification token (retrieved post-creation) |
-| Pub ID | Captured via beehiiv API post-creation; used in build.b.studio embed |
+| Pub ID | Captured via beehiiv API post-creation; used in build.b.studio entity site embed |
 
 **Subscribe page branding (beehiiv dashboard config):**
 - Background: ink `#0D0D0D`
@@ -601,7 +601,7 @@ Voice tuning over time happens by updating the brand voice config in Amplify —
 
 1. Create Dispatch, by Studio B beehiiv publication via API; capture pub ID
 2. Create Build, by Studio B beehiiv publication via API; capture pub ID
-3. Configure DNS for `dispatch.b.studio`, `DLI.b.studio`, and `build.b.studio` in GoDaddy
+3. Configure DNS in GoDaddy: `dispatch.b.studio`, `DLI.b.studio`, `brief.build.b.studio` (newsletter CNAMEs); `build.b.studio` goes to GitHub Pages (entity site, not beehiiv)
 4. Brand all three subscribe pages via beehiiv dashboard
 5. Enable HubSpot integrations on all three publications
 6. Apply Newsletter XP best practices (welcome sequences, confirmation emails, referral program)
@@ -654,7 +654,7 @@ Voice tuning over time happens by updating the brand voice config in Amplify —
 5. Integrate ElevenLabs producer voice — generate question audio from Amplify-Content text output
 6. Establish recording workflow: Kevin records full dialogue (producer + Kevin); editor cuts producer for solo publish
 7. Ship first episodes as Kevin solo while producer character iterates privately
-8. Add podcast distribution: RSS feed, Apple Podcasts, Spotify (Dispatch audio companion)
+8. Add YouTube channel: upload video episodes; audio-only RSS as future add-on when podcast makes sense
 9. When producer persona is coherent across 5+ episodes: publish dialogue format; optionally add AI video avatar
 
 ---
@@ -724,7 +724,7 @@ Every tool in the growth stack has an affiliate or referral program. Amplify's c
 |------|---------|------|
 | HubSpot | Solutions Partner | 20% recurring (lifetime) |
 | beehiiv | Affiliate | Recurring (verify rate at app.beehiiv.com/partners) |
-| Transistor.fm | Affiliate | 30% recurring, 12 months |
+| YouTube | — | Distribution channel, not an affiliate program |
 | ElevenLabs | Affiliate | Verify at elevenlabs.io/affiliate |
 | Typefully | Affiliate | Verify at typefully.com |
 
