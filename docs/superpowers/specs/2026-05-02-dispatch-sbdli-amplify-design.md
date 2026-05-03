@@ -467,7 +467,19 @@ One HubSpot dashboard per entity:
 
 ### 5.1 Brand voice configs
 
-Two brand voice entries in Amplify's per-brand config system, following the existing pattern for `studio-b`, `aesthetik`, `wvh`.
+**Canonical contract:** `memory/feedback_studio-b-voice.md` — the eight rules apply to all three newsletters without exception. Read it before calibrating any voice config.
+
+All three newsletters are Kevin's voice. Not Studio B's voice. Not each entity's voice. Kevin's. The audience changes the subject matter and the register — not the person. Same opinions stated plainly. Same specificity. Same anti-hype test. Same first-person.
+
+| Newsletter | Kevin's mode | What changes |
+|---|---|---|
+| Dispatch | Operator/consultant | Subject: what he's seeing inside engagements and the market |
+| DLI | Analyst/builder | Subject: what the data says + building the index — still Kevin, not a quant terminal |
+| Markdown | Product builder | Subject: what shipped, what broke, what he learned |
+
+**Note on DLI:** The voice contract carves Capital, by Studio b. out as LP-regulated copy. That applies to `capital.b.studio` (the fund landing page). DLI, by Studio B is Kevin writing about building the index — same Studio B voice rules apply.
+
+Three brand voice configs in Amplify's per-brand config system (`dispatch`, `dli`, `markdown`), following the existing pattern for `studio-b`, `aesthetik`, `wvh`.
 
 **`dispatch` voice config:**
 ```
@@ -502,7 +514,7 @@ Sample opener: "The Q1 SBDLI spread compressed 85bps. That's not a data point �
 Length target: 300–600 words for ad hoc issues. 600–900 words for quarterly index issues.
 ```
 
-**`build` voice config:**
+**`markdown` voice config:**
 ```
 Register: Build-in-public / technical operator
 Tone: Direct, specific, shows the work. Kevin built this and he's telling you exactly what happened.
