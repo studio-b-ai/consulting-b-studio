@@ -156,6 +156,14 @@
     }
     .footer-links a:hover { color: var(--vermillion); }
 
+    /* Reveal animation — CSS-driven, JS adds classes */
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal-pending { opacity: 0; }
+    .reveal-done { animation: revealUp 0.5s ease forwards; }
+
     @media (max-width: 768px) {
       .hero { padding: 3rem 1.5rem 2.5rem; }
       .subscribe-section { padding: 3rem 1.5rem; }
@@ -190,7 +198,7 @@
     <h2 class="subscribe-headline">Field notes from inside the operation.</h2>
     <p class="subscribe-body">War stories and operational patterns from active engagements — anonymized, direct, and written for operators who want to know what's actually working. Not what consultants are selling.</p>
     <div class="beehiiv-embed-container">
-      <iframe src="https://embeds.beehiiv.com/DISPATCH_PUB_ID?slim=true" data-test-id="beehiiv-embed"
+      <iframe src="https://embeds.beehiiv.com/pub_e647b558-3a6e-4a29-87ff-c5fd2b566c35?slim=true" data-test-id="beehiiv-embed"
         height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important;
         background-color: transparent; width: 100%;"></iframe>
     </div>
@@ -264,22 +272,26 @@
 </footer>
 
 <script>
+  // Use CSS animation via IntersectionObserver — falls back to visible if observer never fires
   const revealEls = document.querySelectorAll('.work-section, .subscribe-section, .proof-section, .engagement-section');
-  revealEls.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  });
+  revealEls.forEach(el => el.classList.add('reveal-pending'));
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+        entry.target.classList.remove('reveal-pending');
+        entry.target.classList.add('reveal-done');
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.04 });
   revealEls.forEach(el => observer.observe(el));
+  // Fallback: if page is fully loaded and elements are still hidden, show them
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.reveal-pending').forEach(el => {
+      el.classList.remove('reveal-pending');
+      el.classList.add('reveal-done');
+    });
+  });
 </script>
 
 </body>
