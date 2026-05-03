@@ -261,6 +261,12 @@ The LP customer journey is different from the consulting journey. LPs don't want
   One line: plain text email link or Calendly link (no form, no embed)
   Tone: low-pressure, for qualified LPs only
 
+[Dispatch cross-subscribe]
+  Headline: "Kevin also publishes Dispatch, by Studio B"
+  Sub: "Field notes from AI transformation engagements. For operators."
+  CTA: "Subscribe →" → dispatch.b.studio/subscribe
+  Tone: secondary, opt-in — not everyone on the Capital list is an operator
+
 [footer]
 ```
 
@@ -268,29 +274,53 @@ The LP customer journey is different from the consulting journey. LPs don't want
 
 ### 3.4 b.studio — hub redesign
 
-`b.studio` is no longer just the firm homepage — it's the routing hub. Kevin's social presence points here. Visitors self-select their lane. The Billboard DNA stays; the architecture expands to present three service brand lanes clearly alongside the existing product panels.
+`b.studio` is a routing layer, not a story. Kevin's social presence points here; visitors self-select their lane. The entity sites carry the full narrative — b.studio orients and routes. Billboard DNA stays unchanged.
 
-**New section — three lanes:**
-Position: between the hero and the product panels (Bolt + AcuOps), or as a dedicated section below them — whichever reads cleanest in the Billboard layout.
+**What moves off b.studio:**
+- §03 "Work With Us" pitch copy (AI transformation, ERP/AI/Capital services) → lives on `consulting.b.studio`
+- Technical/build-in-public content → lives on `build.b.studio`
 
+**New architecture:**
 ```
-[Three lanes section]
+[hero]
+  Existing copy stays — "We don't sell software we wouldn't run ourselves."
+  One CTA: "Find your lane →" (smooth-scrolls to entity lanes section)
+
+[§02 Products]
+  Existing 3 SaaS tiles: Bolt / AcuOps / Amplify
+  Fix header copy: "THREE IN PRODUCTION" (was "FOUR IN PRODUCTION" — only 3 tiles exist)
+  Amplify subtitle: update from "LinkedIn Engine" → "Outbound Intelligence Engine"
+
+[§03 Entity lanes — Option A]
   Headline: "Three ways to work with us."
 
   [Consulting, by Studio B]
-    1-line description
-    "Read Dispatch, by Studio B →" (consulting.b.studio)
+    "We embed. We don't advise."
+    → consulting.b.studio
+    Subscribe: Dispatch, by Studio B
 
   [Capital, by Studio B]
-    1-line description
-    "Read DLI, by Studio B →" (capital.b.studio)
+    "Non-bank lender for the global lower middle market."
+    → capital.b.studio
+    Subscribe: DLI, by Studio B
 
   [Build, by Studio B]
-    1-line description
-    "Read Build, by Studio B →" (build.b.studio)
+    "We ship on our own stack. We build in public."
+    → build.b.studio
+    Subscribe: Build, by Studio B
+
+[§04 Proof]
+  Existing pull quote stays — "We don't have a demo environment..."
+  Portfolio stats stay (7 companies, 4 products, 0 demo environments)
+
+[§05 About]
+  Kevin bio stays
+
+[§06 Contact]
+  Stays
 ```
 
-**Footer:** Add all three newsletter subscribe links.
+**What does NOT go on b.studio:** service descriptions, product deep-dives, case studies, pricing. Those live on the entity sites.
 
 ### 3.5 build.b.studio
 
