@@ -61,6 +61,24 @@
     }
     .cta-secondary:hover { color: var(--ink); }
 
+    /* Subscribe section */
+    .subscribe-section { background: var(--ink); color: var(--yolk); padding: 4rem; border-bottom: 3px solid var(--ink); }
+    .subscribe-inner { max-width: 640px; }
+    .subscribe-kicker {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,211,68,0.5); margin-bottom: 1.5rem;
+    }
+    .subscribe-headline {
+      font-family: 'Fraunces', serif; font-weight: 900; font-style: italic;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.05; letter-spacing: -0.02em;
+      color: var(--yolk); margin-bottom: 1rem;
+    }
+    .subscribe-body { font-size: 0.92rem; line-height: 1.65; color: rgba(247,211,68,0.72); margin-bottom: 2rem; }
+    .beehiiv-embed-container { margin-bottom: 1.25rem; }
+    .subscribe-secondary { font-size: 0.78rem; color: rgba(247,211,68,0.45); }
+    .subscribe-secondary a { color: rgba(247,211,68,0.65); text-decoration: none; }
+    .subscribe-secondary a:hover { color: var(--yolk); }
+
     /* Where we work */
     .work-section { border-bottom: 3px solid var(--ink); display: grid; grid-template-columns: repeat(3, 1fr); }
     .work-card { padding: 3rem 3rem 3.5rem; border-right: 3px solid var(--ink); }
@@ -100,18 +118,31 @@
       font-size: 0.9rem; line-height: 1.6; color: rgba(13,13,13,0.7);
     }
 
-    /* Booking section */
-    .booking { padding: 4rem; border-bottom: 3px solid var(--ink); }
-    .section-label {
-      font-family: 'JetBrains Mono', monospace; font-size: 0.52rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: rgba(13,13,13,0.35); margin-bottom: 1.5rem;
+    /* Engagement section */
+    .engagement-section { background: var(--yolk); border-top: 3px solid var(--ink); padding: 4rem; }
+    .engagement-inner { max-width: 640px; }
+    .engagement-kicker {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: rgba(13,13,13,0.4); margin-bottom: 1.5rem;
     }
-    .meetings-iframe-container iframe { border: 3px solid var(--ink) !important; }
+    .engagement-headline {
+      font-family: 'Fraunces', serif; font-weight: 900; font-style: italic;
+      font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 1rem;
+    }
+    .engagement-body { font-size: 0.92rem; line-height: 1.65; color: rgba(13,13,13,0.65); margin-bottom: 1.75rem; }
+    .engagement-link {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.05em; color: var(--ink); text-decoration: none;
+      border-bottom: 2px solid var(--ink); padding-bottom: 2px; transition: opacity 0.12s;
+    }
+    .engagement-link:hover { opacity: 0.6; }
 
     /* Footer */
     footer {
       padding: 1.75rem 4rem; display: flex; justify-content: space-between;
       align-items: center; flex-wrap: wrap; gap: 1rem;
+      border-top: 3px solid var(--ink);
     }
     .footer-copy {
       font-family: 'JetBrains Mono', monospace; font-size: 0.5rem;
@@ -127,12 +158,13 @@
 
     @media (max-width: 768px) {
       .hero { padding: 3rem 1.5rem 2.5rem; }
+      .subscribe-section { padding: 3rem 1.5rem; }
       .work-section { grid-template-columns: 1fr; }
       .work-card { border-right: none; border-bottom: 3px solid var(--ink); }
       .work-card:last-child { border-bottom: none; }
       .proof-row { grid-template-columns: 1fr; padding: 1.5rem; gap: 0.5rem; }
       .proof-client { padding-right: 0; margin-bottom: 0.5rem; }
-      .booking { padding: 2.5rem 1.5rem; }
+      .engagement-section { padding: 2.5rem 1.5rem; }
       footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -146,10 +178,27 @@
   <h1>We don't consult. <em>We embed.</em></h1>
   <p class="hero-body">Operators don't need more advice. They need someone in the room. Built on AI and scar tissue. We don't send decks — we show up.</p>
   <div class="cta-row">
-    <a href="https://brief.benchmarks.b.studio/subscribe" class="cta">Get the brief →</a>
-    <a href="#book" class="cta-secondary">or book a call ↓</a>
+    <a href="https://dispatch.b.studio/subscribe" class="cta">Read Dispatch →</a>
+    <a href="#get-in-touch" class="cta-secondary">or book a call ↓</a>
   </div>
 </section>
+
+<!-- DISPATCH SUBSCRIBE -->
+<section class="subscribe-section" id="subscribe">
+  <div class="subscribe-inner">
+    <div class="subscribe-kicker">DISPATCH, BY STUDIO B</div>
+    <h2 class="subscribe-headline">Field notes from inside the operation.</h2>
+    <p class="subscribe-body">War stories and operational patterns from active engagements — anonymized, direct, and written for operators who want to know what's actually working. Not what consultants are selling.</p>
+    <div class="beehiiv-embed-container">
+      <iframe src="https://embeds.beehiiv.com/DISPATCH_PUB_ID?slim=true" data-test-id="beehiiv-embed"
+        height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important;
+        background-color: transparent; width: 100%;"></iframe>
+    </div>
+    <p class="subscribe-secondary">Kevin also publishes <a href="https://dli.b.studio/subscribe">DLI, by Studio B</a> — the open lower middle market lending index.</p>
+  </div>
+</section>
+
+<div class="stripe"></div>
 
 <div class="work-section">
   <div class="work-card">
@@ -193,10 +242,16 @@
   </div>
 </section>
 
-<section class="booking" id="book">
-  <p class="section-label">Ready to talk &middot; book a call</p>
-  <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/kbibelhausen?embed=true&color=F7D344"></div>
-  <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+<!-- ENGAGEMENT -->
+<section class="engagement-section" id="get-in-touch">
+  <div class="engagement-inner">
+    <div class="engagement-kicker">READY TO GO DEEPER?</div>
+    <h2 class="engagement-headline">Most engagements start with a 30-minute call.</h2>
+    <p class="engagement-body">We take a small number of engagements each year. If you're a PE sponsor, portco, or operator who wants to go further than the newsletter — here's where to start.</p>
+    <a href="https://meetings.hubspot.com/kbibelhausen" class="engagement-link" target="_blank" rel="noopener">
+      Book a 30-minute call → meetings.hubspot.com/kbibelhausen
+    </a>
+  </div>
 </section>
 
 <footer>
@@ -207,6 +262,25 @@
     <li><a href="https://benchmarks.b.studio">Benchmarks</a></li>
   </ul>
 </footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.work-section, .subscribe-section, .proof-section, .engagement-section');
+  revealEls.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
