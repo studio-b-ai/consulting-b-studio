@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DLI, by Studio B — Subscribe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,900&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --yolk: #F7D344;
+      --ink: #0D0D0D;
+      --paper: #F4F1EB;
+      --forest: #1A3328;
+      --vermillion: #D94425;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Diagonal accent stripe — top-right */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -100px;
+      right: -100px;
+      width: 320px;
+      height: 320px;
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--forest) 0px,
+        var(--forest) 3px,
+        transparent 3px,
+        transparent 18px
+      );
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    /* Diagonal accent stripe — bottom-left */
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -100px;
+      left: -100px;
+      width: 260px;
+      height: 260px;
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--forest) 0px,
+        var(--forest) 3px,
+        transparent 3px,
+        transparent 18px
+      );
+      opacity: 0.05;
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      width: 100%;
+      border: 1px solid rgba(26, 51, 40, 0.14);
+      background: #FFFFFF;
+      padding: 56px 52px 48px;
+      box-shadow: 0 2px 24px rgba(26, 51, 40, 0.06);
+    }
+
+    /* Top border accent */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--forest);
+    }
+
+    .kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(26, 51, 40, 0.4);
+      margin-bottom: 28px;
+    }
+
+    .headline {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.08;
+      color: var(--ink);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .body-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: rgba(13, 13, 13, 0.65);
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .email-input {
+      flex: 1;
+      background: transparent;
+      border: 1.5px solid rgba(26, 51, 40, 0.3);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      padding: 13px 16px;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: border-color 0.15s;
+    }
+
+    .email-input::placeholder {
+      color: rgba(26, 51, 40, 0.3);
+    }
+
+    .email-input:focus {
+      border-color: var(--forest);
+    }
+
+    .submit-btn {
+      background: var(--forest);
+      color: var(--paper);
+      border: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 13px 24px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+
+    .submit-btn:hover { opacity: 0.88; }
+
+    .form-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: rgba(26, 51, 40, 0.3);
+      letter-spacing: 0.06em;
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: rgba(26, 51, 40, 0.15);
+      margin: 40px 0 20px;
+    }
+
+    .footer-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: rgba(26, 51, 40, 0.32);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .annotation {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(26, 51, 40, 0.05);
+      border: 1px solid rgba(26, 51, 40, 0.15);
+      padding: 12px 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: rgba(26, 51, 40, 0.45);
+      letter-spacing: 0.06em;
+      line-height: 1.6;
+      max-width: 220px;
+      z-index: 10;
+    }
+    .annotation strong {
+      color: rgba(26, 51, 40, 0.7);
+      display: block;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="kicker">DLI, by Studio B</div>
+    <h1 class="headline">The only open index for LMM direct lending.</h1>
+    <p class="body-text">
+      Quarterly spread, structure, and recovery data across the global lower middle market. Market event commentary as it happens. We publish it because the benchmarks didn't exist — and LPs deserve to see the data before they commit capital.
+    </p>
+    <div class="form-row">
+      <input class="email-input" type="email" placeholder="your@email.com" />
+      <button class="submit-btn">Subscribe →</button>
+    </div>
+    <div class="form-note">No spam. Unsubscribe any time.</div>
+    <div class="divider"></div>
+    <div class="footer-note">Published by Kevin Bibelhausen · Studio B</div>
+  </div>
+
+  <div class="annotation">
+    <strong>beehiiv config ref</strong>
+    BG: #F4F1EB (Paper)<br>
+    Primary: #1A3328 (Forest)<br>
+    Button text: #F4F1EB<br>
+    Headline: Fraunces 900 italic<br>
+    Labels: JetBrains Mono
+  </div>
+</body>
+</html>
