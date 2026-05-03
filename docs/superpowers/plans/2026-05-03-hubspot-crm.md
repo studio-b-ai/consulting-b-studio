@@ -332,23 +332,19 @@ Confirm "Studio B Build" pipeline appears in deals pipelines list.
 
 **What:** Confirm the two meeting scheduler links are live and correctly configured — one for consulting (Kevin's primary calendar), one for Capital LP inquiries.
 
-- [ ] **Step 1: Verify Consulting meeting link**
+- [ ] **Step 1: Verify Consulting meeting link with /gstack**
 
-Open in browser: `https://meetings.hubspot.com/kbibelhausen`
-
-Confirm:
-- Page loads with Kevin's name
-- 30-minute slot is bookable
-- Calendar availability is accurate
-- Meeting is associated with Kevin's HubSpot account
+Invoke `/gstack` targeting `https://meetings.hubspot.com/kbibelhausen`. Ask it to screenshot and confirm:
+- Page loads (not 404)
+- Kevin's name appears
+- A 30-minute slot option is visible
+- Calendar availability is shown
 
 If the link 404s, go to HubSpot → Sales → Meetings → Create meeting link.
 
-- [ ] **Step 2: Verify Capital LP meeting link**
+- [ ] **Step 2: Verify Capital LP meeting link with /gstack**
 
-Open in browser: `https://meetings.hubspot.com/bibelhausen/studio-b-capital-lp-inquiry`
-
-Confirm page loads. If it 404s, create via HubSpot → Sales → Meetings → Create meeting link, with slug `studio-b-capital-lp-inquiry`.
+Invoke `/gstack` targeting `https://meetings.hubspot.com/bibelhausen/studio-b-capital-lp-inquiry`. Ask it to screenshot and confirm the page loads. If it 404s, create via HubSpot → Sales → Meetings → Create meeting link, with slug `studio-b-capital-lp-inquiry`.
 
 - [ ] **Step 3: Confirm meeting links are pipeline-connected**
 

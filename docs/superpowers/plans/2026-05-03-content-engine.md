@@ -175,13 +175,9 @@ Expected: PASS.
 
 Read `docs/pub-ids.md` from the consulting-b-studio repo. Replace `DISPATCH_PUB_ID` in dispatch.yaml with the actual Dispatch publication ID.
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 5: Ship with /ship**
 
-```bash
-cd /Users/kevin/dev/amplify
-git add apps/engine/src/config/brands/dispatch.yaml apps/engine/src/config/brands/__tests__/dispatch-config.test.ts
-git commit -m "feat(brands): add Dispatch, by Studio B brand voice config"
-```
+Invoke `/ship` with message `"feat(brands): add Dispatch, by Studio B brand voice config"`.
 
 ---
 
@@ -430,10 +426,7 @@ Expected: All 4 tests PASS (dispatch + dispatch-fields + dli + markdown).
 
 - [ ] **Step 6: Commit**
 
-```bash
-git add apps/engine/src/config/brands/dli.yaml apps/engine/src/config/brands/markdown.yaml apps/engine/src/config/brands/__tests__/dispatch-config.test.ts
-git commit -m "feat(brands): add DLI and Markdown brand voice configs"
-```
+Invoke `/ship` with message `"feat(brands): add DLI and Markdown brand voice configs"`.
 
 ---
 
@@ -622,12 +615,9 @@ cd /Users/kevin/dev/amplify
 railway variables set BEEHIIV_API_KEY=qFOrUw6ZDmBCmnZ5Hka7xNpaYQNCZma1PVajfDNWrp8Z1jMsjxPEzpKh6MRokSrK --service amplify-workers --skip-deploys
 ```
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 5: Ship with /ship**
 
-```bash
-git add apps/workers/src/adapters/beehiiv-draft.ts apps/workers/src/adapters/beehiiv-draft.test.ts
-git commit -m "feat(workers): BeehiivDraftAdapter — POST newsletter drafts to beehiiv"
-```
+Invoke `/ship` with message `"feat(workers): BeehiivDraftAdapter — POST newsletter drafts to beehiiv"`. The skill runs tests, shows the diff, and creates the PR.
 
 ---
 
@@ -731,12 +721,9 @@ export function buildNewsletterApprovalMessage(
 }
 ```
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 5: Ship with /ship**
 
-```bash
-git add apps/workers/src/content-worker.ts apps/workers/src/__tests__/content-worker-newsletter.test.ts
-git commit -m "feat(workers): newsletter job builder + Slack approval message for newsletter brands"
-```
+Invoke `/ship` with message `"feat(workers): newsletter job builder + Slack approval message for newsletter brands"`.
 
 ---
 
@@ -825,10 +812,7 @@ Run tests, verify pass, then commit.
 - [ ] **Step 4: Commit**
 
 ```bash
-cd /Users/kevin/dev/webhook-router
-git add .
-git commit -m "feat: GitHub PR merged → Amplify newsletter signal emitter (dli/markdown brands)"
-```
+Invoke `/ship` in the `webhook-router` repo with message `"feat: GitHub PR merged → Amplify newsletter signal emitter (dli/markdown brands)"`.
 
 ---
 
@@ -1028,11 +1012,7 @@ approves both in the same Slack message.
 Typefully API key: stored in consulting-b-studio/.mcp.json
 ```
 
-```bash
-cd /Users/kevin/dev/consulting-b-studio
-git add docs/typefully-workflow.md
-git commit -m "docs: Typefully workflow for Amplify social scheduling"
-```
+Invoke `/ship` in the `consulting-b-studio` repo with message `"docs: Typefully workflow for Amplify social scheduling"`.
 
 ---
 

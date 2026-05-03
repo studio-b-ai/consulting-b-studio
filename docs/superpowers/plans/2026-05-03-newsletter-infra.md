@@ -162,13 +162,13 @@ In beehiiv dashboard → Dispatch → Settings → Custom CSS, add:
 }
 ```
 
-- [ ] **Step 3: Verify subscribe page at dispatch.b.studio/subscribe**
+- [ ] **Step 3: Verify subscribe page with /gstack**
 
-Navigate to `https://dispatch.b.studio/subscribe` in browser. Confirm:
+Invoke `/gstack` targeting `https://dispatch.b.studio/subscribe`. Ask it to screenshot and confirm:
 - Background is yolk `#F7D344`
 - Button is ink `#0D0D0D`
-- Fraunces displays on headline
-- Description text is correct
+- Fraunces displays on the headline
+- Description text matches what was configured
 
 ---
 
@@ -197,9 +197,9 @@ In beehiiv dashboard → DLI → Settings → Custom CSS:
 }
 ```
 
-- [ ] **Step 3: Verify subscribe page at dli.b.studio/subscribe**
+- [ ] **Step 3: Verify subscribe page with /gstack**
 
-Navigate to `https://dli.b.studio/subscribe`. Confirm:
+Invoke `/gstack` targeting `https://dli.b.studio/subscribe`. Ask it to screenshot and confirm:
 - Background is paper `#F4F1EB`
 - Button is forest `#1A3328`
 - Title reads "DLI, by Studio B"
@@ -237,12 +237,12 @@ In beehiiv dashboard → Markdown → Settings → Custom CSS:
 }
 ```
 
-- [ ] **Step 3: Verify subscribe page at markdown.b.studio/subscribe**
+- [ ] **Step 3: Verify subscribe page with /gstack**
 
-Navigate to `https://markdown.b.studio/subscribe`. Confirm:
+Invoke `/gstack` targeting `https://markdown.b.studio/subscribe`. Ask it to screenshot and confirm:
 - Background is ink `#0D0D0D`
 - Button is vermillion `#D94425`
-- JetBrains Mono displays on headline
+- JetBrains Mono displays on the headline
 - Text is readable (paper `#F4F1EB` on ink bg)
 
 ---
