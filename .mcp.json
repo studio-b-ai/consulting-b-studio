@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "beehiiv": {
+      "type": "http",
+      "url": "https://mcp.beehiiv.com/mcp",
+      "headers": {
+        "Authorization": "Bearer qFOrUw6ZDmBCmnZ5Hka7xNpaYQNCZma1PVajfDNWrp8Z1jMsjxPEzpKh6MRokSrK"
+      }
+    },
+    "studiob": {
+      "type": "http",
+      "url": "https://studiob-api-production-2df4.up.railway.app/mcp",
+      "headers": {
+        "Authorization": "Bearer 4994c306c04260e37eef7350bb0056831a720b84fa949bca09542ee30071585c"
+      }
+    },
+    "elevenlabs": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["elevenlabs-mcp"],
+      "env": {
+        "ELEVENLABS_API_KEY": "NEEDS_KEY"
+      }
+    },
+    "typefully": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "typefully-mcp-server"],
+      "env": {
+        "TYPEFULLY_API_KEY": "NEEDS_KEY"
+      }
+    }
+  }
+}
