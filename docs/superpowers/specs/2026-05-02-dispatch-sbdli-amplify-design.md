@@ -18,7 +18,7 @@ Three service brands, one personal brand, one principal, one content engine:
 | Entity | Domain | Newsletter | Audience | Conversion goal |
 |---|---|---|---|---|
 | Studio B (hub) | `b.studio` | — | All of the above | Route to the right lane |
-| Consulting, by Studio B | `consulting.b.studio` | Dispatch, by Studio B | Operators, PE/PE-backed companies, fractional CTO prospects | Calendly booked → engagement signed |
+| Consulting, by Studio B | `consulting.b.studio` | Dispatch, by Studio B | Operators, PE/PE-backed companies, fractional CTO prospects | HubSpot meeting booked → engagement signed |
 | Capital, by Studio B | `capital.b.studio` | DLI, by Studio B | LPs, credit professionals, LMM operators | LP inquiry → introductory call |
 | Build, by Studio B | `build.b.studio` | Build, by Studio B | Technical founders, Acumatica ecosystem, operators who build | Product trial / engagement / Amplify pipeline |
 | Kevin Bibelhausen (personal) | `bibelhausen.com` | — | Anyone who's heard Kevin's name | Understand the full picture; route to the right entity |
@@ -40,7 +40,7 @@ Nael edits in beehiiv → Kevin approves via Slack → issue sends
         ↓
 Subscribers click through to consulting.b.studio or capital.b.studio
         ↓
-HubSpot tracks: subscriber → engagement → Calendly booked or LP inquiry
+HubSpot tracks: subscriber → engagement → meeting booked or LP inquiry
         ↓
 Consulting client signed or LP committed
         ↓
@@ -207,7 +207,7 @@ Both entity sites stay on **GitHub Pages**. No Webflow dependency. Billboard DNA
 [caution stripe]
 [hero] "We don't consult. We embed." → "Book a call" CTA
 [3 work cards] ERP & Systems · AI & Automation · Growth & Capital
-[HubSpot Calendly embed — full width]
+[HubSpot meeting embed — full width]
 [footer]
 ```
 
@@ -219,15 +219,17 @@ Both entity sites stay on **GitHub Pages**. No Webflow dependency. Billboard DNA
   Headline: "Field notes from inside the operation."
   Body: 2-sentence description of what's in Dispatch
   beehiiv embed (Dispatch pub ID)
-  Secondary line: "Also publishing DLI, by Studio B →" (link to DLI.b.studio/subscribe)
+  Secondary line: "Also publishing DLI, by Studio B →" (link to dli.b.studio/subscribe)
 [3 work cards] ERP & Systems · AI & Automation · Growth & Capital
+[Proof section]
+  Heritage Fabrics (named) · Wasala/Capital (anonymized) · The flywheel
 [engagement section]
   Headline: "Ready to go deeper?"
-  Plain text Calendly link (no embed — one line, no iframe)
+  HubSpot meeting link (plain text — no embed, no iframe)
 [footer]
 ```
 
-The Calendly embed is removed. The call option is preserved as a plain text link — it's the upsell after the newsletter warms the relationship, not the hero action.
+No Calendly anywhere. All meeting booking goes through HubSpot.
 
 **Motion:** Intersection Observer scroll reveals on section entrance (~50 lines vanilla JS). Sections fade + translate-up on scroll into view.
 
@@ -258,7 +260,7 @@ The LP customer journey is different from the consulting journey. LPs don't want
 
 [LP inquiry section]
   Headline: "Interested in the fund?"
-  One line: plain text email link or Calendly link (no form, no embed)
+  One line: plain text HubSpot meeting link (no form, no embed)
   Tone: low-pressure, for qualified LPs only
 
 [Dispatch cross-subscribe]
@@ -276,51 +278,67 @@ The LP customer journey is different from the consulting journey. LPs don't want
 
 `b.studio` is a routing layer, not a story. Kevin's social presence points here; visitors self-select their lane. The entity sites carry the full narrative — b.studio orients and routes. Billboard DNA stays unchanged.
 
-**What moves off b.studio:**
-- §03 "Work With Us" pitch copy (AI transformation, ERP/AI/Capital services) → lives on `consulting.b.studio`
-- Technical/build-in-public content → lives on `build.b.studio`
+**What this build removes from b.studio:**
+- §03 "Work With Us" pitch copy entirely — moves to `consulting.b.studio`
+- No Calendly anywhere on b.studio (or any entity site — HubSpot everywhere)
+
+**Source copy being replaced (current §03):**
+> "We take a small number of engagements each year. AI digital transformation for SMBs and LMM PE-backed companies. We ran this playbook on our own portfolio first — ERP, WMS, CRM, outbound intelligence, CI/CD — end to end, in production. If you're a PE sponsor or portco looking to do the same, start a conversation."
+
+That paragraph is good copy — it belongs on `consulting.b.studio`, not on the hub.
 
 **New architecture:**
 ```
+[nav]
+  b. · Products · Entities · Proof · About · Get in Touch
+
 [hero]
-  Existing copy stays — "We don't sell software we wouldn't run ourselves."
-  One CTA: "Find your lane →" (smooth-scrolls to entity lanes section)
+  Existing copy: "We don't sell software we wouldn't run ourselves."
+  Existing p.s. stays: "we run a seven-company portfolio on the same code..."
+  Stats: 7 portfolio companies · 3 products shipping · 0 demo environments · Principal-led
+  (fix: was "4 products" — 3 SaaS products are in production)
+  No primary CTA on hero — let the visitor scroll
 
-[§02 Products]
-  Existing 3 SaaS tiles: Bolt / AcuOps / Amplify
-  Fix header copy: "THREE IN PRODUCTION" (was "FOUR IN PRODUCTION" — only 3 tiles exist)
-  Amplify subtitle: update from "LinkedIn Engine" → "Outbound Intelligence Engine"
+[§02 — Products]
+  Header: "THREE IN PRODUCTION" (fix from "FOUR IN PRODUCTION")
+  Three color-blocked tiles, unchanged except Amplify subtitle:
+    01 Bolt — unchanged
+    02 AcuOps — unchanged
+    03 Amplify — subtitle: "Outbound Intelligence Engine"
+                 (was "LinkedIn Engine" — scope is now multi-channel)
 
-[§03 Entity lanes — Option A]
-  Headline: "Three ways to work with us."
+[§03 — Entity lanes]
+  Header: "Three ways to work with us."
+  Three tiles, each with: one-line description · link to entity site · newsletter subscribe CTA
 
   [Consulting, by Studio B]
     "We embed. We don't advise."
-    → consulting.b.studio
-    Subscribe: Dispatch, by Studio B
+    "Read Dispatch, by Studio B →" · consulting.b.studio
 
   [Capital, by Studio B]
     "Non-bank lender for the global lower middle market."
-    → capital.b.studio
-    Subscribe: DLI, by Studio B
+    "Read DLI, by Studio B →" · capital.b.studio
 
   [Build, by Studio B]
-    "We ship on our own stack. We build in public."
-    → build.b.studio
-    Subscribe: Build, by Studio B
+    "We ship on our own stack and publish the build."
+    "Read Build, by Studio B →" · build.b.studio
 
-[§04 Proof]
-  Existing pull quote stays — "We don't have a demo environment..."
-  Portfolio stats stay (7 companies, 4 products, 0 demo environments)
+[§04 — Proof]
+  Pull quote stays: "We don't have a demo environment. We have a portfolio..."
+  Stats block stays: 7 companies · 4 products · Daily real orders · 0 demo environments
 
-[§05 About]
-  Kevin bio stays
+[§05 — About]
+  Kevin bio: stays verbatim
 
-[§06 Contact]
-  Stays
+[§06 — Contact]
+  HubSpot form stays (already wired — portalId 49070660, formId ea2c2f4a-...)
+  No Calendly. "Or email directly: kevin@b.studio" stays.
+
+[footer]
+  Links: Products · Consulting · Capital · Build · Privacy
 ```
 
-**What does NOT go on b.studio:** service descriptions, product deep-dives, case studies, pricing. Those live on the entity sites.
+**What does NOT go on b.studio:** service descriptions, product deep-dives, case studies, pricing, meeting booking. Those live on the entity sites. The hub routes; it does not sell.
 
 ### 3.5 build.b.studio
 
@@ -332,16 +350,17 @@ Audience is technical — operators who build, Acumatica ecosystem, founders. Th
 ```
 [hero]
   Headline: "We ship on our own stack."
-  Sub: "Bolt and AcuOps run Heritage Fabrics. We build in public."
-  CTA: "Subscribe to Build, by Studio B" → beehiiv embed
+  Sub: "Bolt, AcuOps, and Amplify run real operations. We build in public."
+  CTA: "Subscribe to Build, by Studio B" → beehiiv embed (brief.build.b.studio pub ID)
 
 [Build subscribe section]
   beehiiv embed (Build pub ID)
 
 [What we're building]
-  Bolt — one paragraph, plain language
-  AcuOps — one paragraph, plain language
-  Links to bolt.b.studio + acuops.com
+  Bolt — one paragraph, plain language. Link → bolt.b.studio
+  AcuOps — one paragraph, plain language. Link → acuops.com
+  Amplify — one paragraph: signal detection → drafted content → Slack approval loop.
+             "We built this to run our own marketing. Now we sell it." Link → amplify.b.studio
 
 [Recent build notes]
   3 recent Build, by Studio B issue excerpts + links
@@ -402,7 +421,7 @@ HubSpot is the attribution and relationship layer. It does not publish content. 
 | `subscriber_type` | Dropdown | `consulting_prospect`, `lp_prospect`, `operator`, `both` | Manual or enrichment |
 | `utm_source` | Text | `dispatch`, `dli` | UTM tracking on click-through |
 | `utm_campaign` | Text | `[issue-slug]` | UTM tracking on click-through |
-| `calendly_booked_date` | Date | — | Calendly → HubSpot integration |
+| `meeting_booked_date` | Date | — | HubSpot meeting scheduler |
 | `lp_inquiry_date` | Date | — | Manual or form submission |
 
 ### 4.2 Consulting pipeline
@@ -410,7 +429,7 @@ HubSpot is the attribution and relationship layer. It does not publish content. 
 ```
 Subscriber (Dispatch, by Studio B)
   → Newsletter engagement (open rate, click-through to consulting.b.studio)
-  → Calendly booked
+  → HubSpot meeting booked
   → Introductory call completed
   → Proposal sent
   → Engagement signed
@@ -439,7 +458,7 @@ HubSpot tracks the full funnel for both pipelines: subscribe → open → click 
 ### 4.5 Reporting
 
 One HubSpot dashboard per entity:
-- **Consulting:** subscriber count, open rate, Calendly booked (last 30/90 days), pipeline value by newsletter source
+- **Consulting:** subscriber count, open rate, meetings booked (last 30/90 days), pipeline value by newsletter source
 - **Capital:** subscriber count, open rate, LP inquiry count, materials sent, committed LPs
 
 ---
@@ -649,7 +668,7 @@ Voice tuning over time happens by updating the brand voice config in Amplify —
 
 1. Rebuild `consulting-b-studio/index.html` — newsletter-first architecture (Section 3.2)
 2. Wire Dispatch beehiiv embed (pub ID from Pass 1)
-3. Add Intersection Observer scroll reveals; remove Calendly embed, replace with plain text link
+3. Add Intersection Observer scroll reveals; replace existing meeting embed with HubSpot meeting link (plain text)
 4. Build `capital.b.studio` — newsletter-first, LP customer journey (Section 3.3)
 5. Wire DLI, by Studio B beehiiv embed on capital.b.studio
 6. Build `build.b.studio` — technical register, Bolt/AcuOps build-in-public (Section 3.5)
@@ -663,7 +682,7 @@ Voice tuning over time happens by updating the brand voice config in Amplify —
 1. Create custom contact properties (`newsletter_source`, `subscriber_type`, `lp_inquiry_date`)
 2. Build Consulting pipeline (Section 4.2)
 3. Build Capital pipeline (Section 4.3)
-4. Connect Calendly → HubSpot integration
+4. Configure HubSpot meeting scheduler link for Consulting pipeline
 5. Build reporting dashboards (one per entity)
 
 ### Pass 5 — Amplify content engine
@@ -778,7 +797,7 @@ beehiiv Max includes two native revenue features that activate once subscriber v
 - **bibelhausen.com GitHub account:** Confirm whether repo lives under `kbibelhausen` personal account or `studio-b-ai` org.
 - **Kevin's X.com handle:** Confirm the primary account handle for profile updates in Pass 2.
 - **Build, by Studio B signal sources:** What signals trigger Build issues? GitHub PRs merged (bolt-wms, acuops-pipeline)? Manual field notes only? Confirm for Amplify voice config in Pass 5.
-- **HubSpot Calendly integration:** Confirm Calendly → HubSpot native integration is already set up, or needs to be wired.
+- **HubSpot meeting scheduler:** Confirm HubSpot Meetings is enabled on Kevin's account; generate meeting link for Consulting pipeline.
 - **Referral program:** Skip referrals at launch for all three newsletters, or configure for Dispatch only?
 - **Amplify M4 / X.com signal worker:** Confirm whether M4 timeline affects Pass 5 sequencing.
 - **Build pipeline conversion goal:** Build, by Studio B audience converts to what? Product trial (Bolt/AcuOps)? Consulting engagement? Amplify pipeline referral? Confirm for HubSpot pipeline setup.
