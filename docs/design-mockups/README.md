@@ -4,9 +4,9 @@ These mockups show the target visual design for each beehiiv subscribe page.
 Open each HTML file in a browser to review, then configure beehiiv's branding dashboard to match.
 
 ## Files
-- `dispatch-subscribe-mockup.html` — Dispatch, by Studio B (ink/yolk)
-- `dli-subscribe-mockup.html` — DLI, by Studio B (paper/forest)  
-- `markdown-subscribe-mockup.html` — Markdown, by Studio B (ink/vermillion)
+- `dispatch-subscribe-mockup.html` — Dispatch, by Studio b. (ink/yolk)
+- `dli-subscribe-mockup.html` — DLI, by Studio b. (paper/forest)  
+- `markdown-subscribe-mockup.html` — Markdown, by Studio b. (ink/vermillion)
 
 ## How to apply in beehiiv
 For each publication: Settings → Publication → Branding
