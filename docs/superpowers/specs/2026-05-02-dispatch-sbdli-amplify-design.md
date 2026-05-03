@@ -20,7 +20,7 @@ Three service brands, one personal brand, one principal, one content engine:
 | Studio B (hub) | `b.studio` | — | All of the above | Route to the right lane |
 | Consulting, by Studio B | `consulting.b.studio` | Dispatch, by Studio B | Operators, PE/PE-backed companies, fractional CTO prospects | HubSpot meeting booked → engagement signed |
 | Capital, by Studio B | `capital.b.studio` | DLI, by Studio B | LPs, credit professionals, LMM operators | LP inquiry → introductory call |
-| Build, by Studio B | `build.b.studio` | Build, by Studio B | Technical founders, Acumatica ecosystem, operators who build | Product trial / engagement / Amplify pipeline |
+| Build, by Studio B | `build.b.studio` | Markdown, by Studio B | Technical founders, Acumatica ecosystem, operators who build | Product trial / engagement / Amplify pipeline |
 | Kevin Bibelhausen (personal) | `bibelhausen.com` | — | Anyone who's heard Kevin's name | Understand the full picture; route to the right entity |
 
 `b.studio` is the firm hub — Kevin's social presence points here, and from here visitors self-select their lane. Each lane has its own site, newsletter, and conversion motion.
@@ -159,13 +159,13 @@ Pub ID: `pub_e647b558-3a6e-4a29-87ff-c5fd2b566c35` (currently live at `brief.ben
 - beehiiv native HubSpot integration enabled
 - New subscriber → HubSpot contact created with `newsletter_source = "dli"`
 
-### 2.3 Build, by Studio B (new publication)
+### 2.3 Markdown, by Studio B (new publication)
 
 | Item | Value |
 |---|---|
-| Publication name | Build, by Studio B |
-| Custom domain | `brief.build.b.studio` |
-| DNS — CNAME | `brief.build` → `cname.beehiiv.com` |
+| Publication name | Markdown, by Studio B |
+| Custom domain | `markdown.b.studio` |
+| DNS — CNAME | `markdown` → `cname.beehiiv.com` |
 | DNS — TXT | beehiiv ownership verification token (retrieved post-creation) |
 | Pub ID | Captured via beehiiv API post-creation; used in build.b.studio entity site embed |
 
@@ -173,7 +173,7 @@ Pub ID: `pub_e647b558-3a6e-4a29-87ff-c5fd2b566c35` (currently live at `brief.ben
 - Background: ink `#0D0D0D`
 - Button: vermillion `#D94425`
 - Headline font: JetBrains Mono (the build/code register; configured via custom CSS)
-- Title: "Build, by Studio B"
+- Title: "Markdown, by Studio B"
 - Description: "How we build AI-native software on real operations — and what breaks. Behind-the-scenes of Bolt, AcuOps, and everything else Studio B ships."
 
 **Audience:** Technical founders, Acumatica ecosystem, operators who are also building. Content: product war stories, build-in-public on Bolt/AcuOps, lessons from shipping AI-native software in production environments.
@@ -321,7 +321,7 @@ That paragraph is good copy — it belongs on `consulting.b.studio`, not on the 
 
   [Build, by Studio B]
     "We ship on our own stack and publish the build."
-    "Read Build, by Studio B →" · build.b.studio
+    "Read Markdown, by Studio B →" · build.b.studio
 
 [§04 — Proof]
   Pull quote stays: "We don't have a demo environment. We have a portfolio..."
@@ -351,7 +351,7 @@ Audience is technical — operators who build, Acumatica ecosystem, founders. Th
 [hero]
   Headline: "We ship on our own stack."
   Sub: "Bolt, AcuOps, and Amplify run real operations. We build in public."
-  CTA: "Subscribe to Build, by Studio B" → beehiiv embed (brief.build.b.studio pub ID)
+  CTA: "Subscribe to Markdown, by Studio B" → beehiiv embed (markdown.b.studio pub ID)
 
 [Build subscribe section]
   beehiiv embed (Build pub ID)
@@ -363,7 +363,7 @@ Audience is technical — operators who build, Acumatica ecosystem, founders. Th
              "We built this to run our own marketing. Now we sell it." Link → amplify.b.studio
 
 [Recent build notes]
-  3 recent Build, by Studio B issue excerpts + links
+  3 recent Markdown, by Studio B issue excerpts + links
 
 [footer]
 ```
@@ -649,8 +649,8 @@ Voice tuning over time happens by updating the brand voice config in Amplify —
 ### Pass 1 — Newsletter infrastructure
 
 1. Create Dispatch, by Studio B beehiiv publication via API; capture pub ID
-2. Create Build, by Studio B beehiiv publication via API; capture pub ID
-3. Configure DNS in GoDaddy: `dispatch.b.studio`, `DLI.b.studio`, `brief.build.b.studio` (newsletter CNAMEs); `build.b.studio` goes to GitHub Pages (entity site, not beehiiv)
+2. Create Markdown, by Studio B beehiiv publication via API; capture pub ID
+3. Configure DNS in GoDaddy: `dispatch.b.studio`, `DLI.b.studio`, `markdown.b.studio` (newsletter CNAMEs); `build.b.studio` goes to GitHub Pages (entity site, not beehiiv)
 4. Brand all three subscribe pages via beehiiv dashboard
 5. Enable HubSpot integrations on all three publications
 6. Apply Newsletter XP best practices (welcome sequences, confirmation emails, referral program)
@@ -672,7 +672,7 @@ Voice tuning over time happens by updating the brand voice config in Amplify —
 4. Build `capital.b.studio` — newsletter-first, LP customer journey (Section 3.3)
 5. Wire DLI, by Studio B beehiiv embed on capital.b.studio
 6. Build `build.b.studio` — technical register, Bolt/AcuOps build-in-public (Section 3.5)
-7. Wire Build, by Studio B beehiiv embed on build.b.studio
+7. Wire Markdown, by Studio B beehiiv embed on build.b.studio
 8. Redesign `b.studio` as three-lane hub — add service brand lanes section + footer links (Section 3.4)
 9. Build `bibelhausen.com` — personal brand, own visual identity (Section 3.6); deploy from personal GitHub account
 10. Deploy all via GitHub Pages
@@ -796,8 +796,8 @@ beehiiv Max includes two native revenue features that activate once subscriber v
 - **bibelhausen.com visual identity:** To be designed separately. Constraint: distinct from Studio B Billboard DNA — clean, minimal, personal. Confirm palette + typography before Pass 3 step 9.
 - **bibelhausen.com GitHub account:** Confirm whether repo lives under `kbibelhausen` personal account or `studio-b-ai` org.
 - **Kevin's X.com handle:** Confirm the primary account handle for profile updates in Pass 2.
-- **Build, by Studio B signal sources:** What signals trigger Build issues? GitHub PRs merged (bolt-wms, acuops-pipeline)? Manual field notes only? Confirm for Amplify voice config in Pass 5.
+- **Markdown, by Studio B signal sources:** What signals trigger Build issues? GitHub PRs merged (bolt-wms, acuops-pipeline)? Manual field notes only? Confirm for Amplify voice config in Pass 5.
 - **HubSpot meeting scheduler:** Confirm HubSpot Meetings is enabled on Kevin's account; generate meeting link for Consulting pipeline.
 - **Referral program:** Skip referrals at launch for all three newsletters, or configure for Dispatch only?
 - **Amplify M4 / X.com signal worker:** Confirm whether M4 timeline affects Pass 5 sequencing.
-- **Build pipeline conversion goal:** Build, by Studio B audience converts to what? Product trial (Bolt/AcuOps)? Consulting engagement? Amplify pipeline referral? Confirm for HubSpot pipeline setup.
+- **Build pipeline conversion goal:** Markdown, by Studio B audience converts to what? Product trial (Bolt/AcuOps)? Consulting engagement? Amplify pipeline referral? Confirm for HubSpot pipeline setup.
