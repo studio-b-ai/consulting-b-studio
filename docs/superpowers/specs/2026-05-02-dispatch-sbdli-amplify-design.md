@@ -682,15 +682,39 @@ Studio B becomes a HubSpot Solutions Partner, earning 20% recurring commission o
 
 **Parallel workstream — not a blocker to the marketing stack build.**
 
-### 7.2 Certification Agent (AcuDev extension)
+### 7.2 HubSpot Operations Agent
 
-HubSpot Academy certifications run under Kevin's account via an agent — the same pattern as AcuDev's T-series capability (read course material, ingest knowledge base, pass multiple-choice exam). No human coursework required.
+HubSpot is API-first by design — a fundamentally different surface than Acumatica. The agent has dramatically more control:
 
-**Scope:** HubSpot Marketing Software, HubSpot Sales Software, and all other Academy certifications relevant to the Solutions Partner program. Generalizes to any platform certification (Salesforce, Google Ads, AWS, Klaviyo, etc.).
+| Capability | HubSpot | Acumatica |
+|---|---|---|
+| Create pipelines, stages, properties | REST API | Not applicable |
+| Create and configure forms | REST API | WebForms + SOAP |
+| Set up workflows and automations | REST API | Customization packages |
+| Manage contacts, companies, deals | REST API | SOAP / OData (brittle) |
+| Configure reporting | REST API | GI XML + publish cycle |
+| Partner portal + client management | REST API | N/A |
+| Academy certifications | Playwright (exams only) | T-series pattern |
 
-**Product implication:** When Amplify onboards a client onto the growth stack, certifications across all stack tools are part of the delivery. "Your team is certified" becomes an Amplify onboarding feature.
+The HubSpot MCP is already wired in this project. The agent makes API calls — no XML packages, no publish cycles, no app pool restarts, no WebForms.
 
-**Implementation:** AcuDev extension. Tracks under `project_acumatica-developer-agent.md` as next capability track. Not scoped in this implementation plan.
+**Build priority:** The HubSpot operations agent is built first, before any other HubSpot implementation plan runs. Once it exists, every subsequent task that touches HubSpot — Studio B portal setup, Ästhetik migration, three pipeline configuration, form wiring, beehiiv subscriber sync — calls the agent. Human delivery cost for a full client HubSpot setup approaches zero.
+
+**Full scope (runs under Kevin's HubSpot account):**
+- Pass HubSpot Academy certifications (Marketing Software + Sales Software + all Solutions Partner requirements) — Playwright for exam UI, API for everything else
+- Create Studio B HubSpot portal
+- Submit Solutions Partner application
+- Connect Ästhetik as managed client #1
+- Build three Studio B pipelines (consulting, capital, build) with stages and properties per Section 4
+- Configure forms on each entity site routed to the correct pipeline
+- Wire beehiiv → HubSpot subscriber sync per publication
+- Set up reporting dashboards per pipeline
+
+**Generalizes to:** Any platform with a certification program and a REST API — Salesforce, Google Ads, Klaviyo, AWS. Certifications become an Amplify onboarding deliverable: "Your team is certified on every tool in your stack."
+
+**Amplify margin implication:** Full client HubSpot onboarding — portal, pipelines, forms, sync, reporting — runs in one agent session. The human cost of that delivery drops from a day of clicking to zero. At 20 Amplify clients, that's the equivalent of 20 days of implementation work automated.
+
+**Implementation:** AcuDev extension. Tracks under `project_acumatica-developer-agent.md` as next capability track. Scoped separately from the marketing stack build — parallel workstream.
 
 ### 7.3 Tool affiliate stack
 
