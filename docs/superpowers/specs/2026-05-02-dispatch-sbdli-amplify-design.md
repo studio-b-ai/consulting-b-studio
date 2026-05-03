@@ -659,6 +659,64 @@ Voice tuning over time happens by updating the brand voice config in Amplify —
 
 ---
 
+## Section 7: Revenue Model
+
+This stack generates revenue beyond the primary conversion goals (engagements signed, LPs committed, product trials). Two parallel revenue streams are embedded in the architecture from day one.
+
+### 7.1 HubSpot Solutions Partner
+
+Studio B becomes a HubSpot Solutions Partner, earning 20% recurring commission on every HubSpot license under management.
+
+**Immediate unlock:** Ästhetik is on HubSpot Enterprise at $5k/mo. As client #1, that's **$1k/mo ($12k/yr) in recurring revenue** from an existing relationship the moment Studio B is credentialed.
+
+**Amplify multiplier:** Every Amplify client onboarded onto HubSpot through Studio B earns the same 20% recurring. At 10 clients averaging $800/mo (Professional), that's $1,600/mo additional.
+
+**Prerequisites:**
+- HubSpot Academy certifications (Marketing Software + Sales Software minimum) under Kevin's account
+- Partner application submitted at https://www.hubspot.com/partners/solutions
+- Confirm commission timing for existing Ästhetik contract (starts at renewal vs. immediately — verify with HubSpot partner team)
+- Create Studio B HubSpot portal (separate from Ästhetik's existing portal)
+- Connect Ästhetik as managed client #1
+
+**Architecture:** Studio B HubSpot is the partner portal and hosts the three Studio B pipelines (consulting, capital, build). Ästhetik's existing portal remains intact as client #1 — all existing integrations (CS Order Entry, Bolt, Heritage Fabrics CRM) are unaffected.
+
+**Parallel workstream — not a blocker to the marketing stack build.**
+
+### 7.2 Certification Agent (AcuDev extension)
+
+HubSpot Academy certifications run under Kevin's account via an agent — the same pattern as AcuDev's T-series capability (read course material, ingest knowledge base, pass multiple-choice exam). No human coursework required.
+
+**Scope:** HubSpot Marketing Software, HubSpot Sales Software, and all other Academy certifications relevant to the Solutions Partner program. Generalizes to any platform certification (Salesforce, Google Ads, AWS, Klaviyo, etc.).
+
+**Product implication:** When Amplify onboards a client onto the growth stack, certifications across all stack tools are part of the delivery. "Your team is certified" becomes an Amplify onboarding feature.
+
+**Implementation:** AcuDev extension. Tracks under `project_acumatica-developer-agent.md` as next capability track. Not scoped in this implementation plan.
+
+### 7.3 Tool affiliate stack
+
+Every tool in the growth stack has an affiliate or referral program. Amplify's client onboarding flow routes new clients through Studio B's affiliate links, generating recurring passive revenue per client.
+
+| Tool | Program | Rate |
+|------|---------|------|
+| HubSpot | Solutions Partner | 20% recurring (lifetime) |
+| beehiiv | Affiliate | Recurring (verify rate at app.beehiiv.com/partners) |
+| Transistor.fm | Affiliate | 30% recurring, 12 months |
+| ElevenLabs | Affiliate | Verify at elevenlabs.io/affiliate |
+| Typefully | Affiliate | Verify at typefully.com |
+
+**Action:** Register affiliate accounts for each tool under Studio B before Amplify client onboarding begins. Bake affiliate links into the Amplify onboarding template (not the client-facing UI — internal onboarding checklist).
+
+### 7.4 beehiiv native monetization
+
+beehiiv Max includes two native revenue features that activate once subscriber volume warrants:
+
+- **Boosts** — other newsletters pay to be recommended to your subscribers at sign-up. Financial/operator audience commands high CPMs. Enable in beehiiv settings; no editorial work required.
+- **Ad Network** — sponsored placements in issues. DLI especially: credit data vendors, fintech, law firms. Enable once DLI reaches ~500 subscribers.
+
+**Paid tier (DLI):** beehiiv supports premium paid subscriptions. DLI is the strongest candidate for a paid tier — credit professionals pay for data and proprietary index access. Revisit at 500 subscribers.
+
+---
+
 ## Open Questions
 
 - **capital.b.studio repo:** New `studio-b-ai/capital-b-studio` repo, or does an existing repo serve this? Confirm before Pass 3.

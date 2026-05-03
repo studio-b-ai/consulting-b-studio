@@ -19,7 +19,7 @@
       "command": "uvx",
       "args": ["elevenlabs-mcp"],
       "env": {
-        "ELEVENLABS_API_KEY": "NEEDS_KEY"
+        "ELEVENLABS_API_KEY": "sk_2d90e764b39398bb53dfc9a30ccbab67d6e8d9de96ae733b"
       }
     },
     "typefully": {
@@ -27,7 +27,7 @@
       "command": "npx",
       "args": ["-y", "typefully-mcp-server"],
       "env": {
-        "TYPEFULLY_API_KEY": "NEEDS_KEY"
+        "TYPEFULLY_API_KEY": "E4VLYMizz9nQQZnKwAa3N5CHTLflUauD"
       }
     }
   }
