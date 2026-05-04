@@ -3,282 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studio b. Consulting — We don't consult. We embed.</title>
-  <meta name="description" content="Operators don't need more advice. They need someone in the room. Built on AI and scar tissue. We don't send decks — we show up.">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Studio b. Consulting">
-  <meta property="og:title" content="We don't consult. We embed.">
-  <meta property="og:description" content="Operators don't need more advice. They need someone in the room. Built on AI and scar tissue. We don't send decks — we show up.">
-  <meta property="og:url" content="https://consulting.b.studio">
-  <meta name="twitter:card" content="summary_large_image">
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49070660.js"></script>
+  <title>Consulting at Studio b. has moved to Markdown</title>
+  <link rel="canonical" href="https://markdown.b.studio/">
+  <meta http-equiv="refresh" content="1; url=https://markdown.b.studio/">
+  <meta name="robots" content="noindex">
+  <script>
+    setTimeout(function () {
+      window.location.replace('https://markdown.b.studio' + window.location.pathname + window.location.search + window.location.hash);
+    }, 900);
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,900;1,9..144,900&family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --yolk: #F7D344;
       --ink: #0D0D0D;
+      --yolk: #F7D344;
       --vermillion: #D94425;
-      --paper: #F4F1EB;
-      --forest: #1A3328;
+      --yolk-text: rgba(247, 211, 68, 0.72);
+      --yolk-dim: rgba(247, 211, 68, 0.4);
     }
-    html { scroll-behavior: smooth; }
-    body { background: var(--yolk); color: var(--ink); font-family: 'Inter', sans-serif; min-height: 100vh; }
-
+    html, body { min-height: 100vh; }
+    body {
+      background: var(--ink);
+      color: var(--yolk-text);
+      font-family: 'IBM Plex Mono', monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: repeating-linear-gradient(-45deg, transparent 0, transparent 22px, rgba(247,211,68,0.025) 22px, rgba(247,211,68,0.025) 23px);
+      pointer-events: none;
+      z-index: 0;
+    }
     .stripe {
-      height: 6px; width: 100%;
-      background: repeating-linear-gradient(-45deg, var(--ink) 0, var(--ink) 8px, var(--yolk) 8px, var(--yolk) 16px);
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: repeating-linear-gradient(-45deg, var(--yolk) 0, var(--yolk) 6px, var(--ink) 6px, var(--ink) 12px);
+      z-index: 2;
     }
-
-    /* Nav */
-    .nav { padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(13,13,13,0.08); }
-    .nav-mark { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(13,13,13,0.45); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 0.5rem; }
-    .nav-link { font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(13,13,13,0.35); text-decoration: none; transition: color 0.12s; display: inline-flex; align-items: center; min-height: 44px; padding: 0 0.5rem; }
-    .nav-link:hover { color: var(--ink); }
-
-    /* Hero */
-    .hero { padding: 4rem 4rem; max-width: 960px; border-bottom: 3px solid var(--ink); }
-    .firm-label {
-      font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: rgba(13,13,13,0.45); margin-bottom: 2rem;
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      width: 100%;
+    }
+    .bmark {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: var(--yolk);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      display: inline-block;
+      margin-bottom: 2.5rem;
+    }
+    .bmark .dot { color: var(--vermillion); }
+    .kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--yolk-dim);
+      margin-bottom: 1.25rem;
     }
     h1 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: clamp(3rem, 6vw, 5.5rem); line-height: 0.93; letter-spacing: -0.03em;
-      color: var(--ink); margin-bottom: 1.75rem;
-    }
-    h1 em { font-style: italic; color: var(--vermillion); }
-    .hero-body {
-      font-size: 1.05rem; line-height: 1.65; color: rgba(13,13,13,0.72);
-      max-width: 560px; margin-bottom: 2.5rem;
-    }
-    .cta-row { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
-    .cta {
-      display: inline-flex; align-items: center; min-height: 44px;
-      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 0.7rem 1.5rem; border: 2px solid var(--ink);
-      color: var(--ink); text-decoration: none; transition: background 0.12s, color 0.12s;
-    }
-    .cta:hover { background: var(--ink); color: var(--yolk); }
-    .cta-secondary {
-      display: inline-flex; align-items: center; min-height: 44px; padding: 0 0.5rem;
-      font-family: 'JetBrains Mono', monospace; font-size: 0.52rem; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase; color: rgba(13,13,13,0.4);
-      text-decoration: none; transition: color 0.12s;
-    }
-    .cta-secondary:hover { color: var(--ink); }
-
-    /* Subscribe section */
-    .subscribe-section { background: var(--ink); color: var(--yolk); padding: 4rem; border-bottom: 3px solid var(--ink); }
-    .subscribe-inner { max-width: 640px; }
-    .subscribe-kicker {
-      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,211,68,0.5); margin-bottom: 1.5rem;
-    }
-    .subscribe-headline {
-      font-family: 'Fraunces', serif; font-weight: 900; font-style: italic;
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.05; letter-spacing: -0.02em;
-      color: var(--yolk); margin-bottom: 1rem;
-    }
-    .subscribe-body { font-size: 0.92rem; line-height: 1.65; color: rgba(247,211,68,0.72); margin-bottom: 2rem; }
-    .beehiiv-embed-container { margin-bottom: 1.25rem; }
-    .subscribe-secondary { font-size: 0.78rem; color: rgba(247,211,68,0.45); }
-    .subscribe-secondary a { color: rgba(247,211,68,0.65); text-decoration: none; }
-    .subscribe-secondary a:hover { color: var(--yolk); }
-
-    /* Where we work */
-    .work-section { border-bottom: 3px solid var(--ink); display: grid; grid-template-columns: repeat(3, 1fr); }
-    .work-card { padding: 3rem 3rem 3.5rem; border-right: 3px solid var(--ink); }
-    .work-card:last-child { border-right: none; }
-    .work-num {
-      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase; color: rgba(13,13,13,0.3);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--yolk);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
       margin-bottom: 1.5rem;
     }
-    .work-title {
-      font-family: 'Fraunces', serif; font-weight: 900; font-style: italic;
-      font-size: 1.5rem; line-height: 1.05; letter-spacing: -0.02em;
-      color: var(--ink); margin-bottom: 1rem;
+    h1 .dot { color: var(--vermillion); }
+    p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      color: var(--yolk-text);
+      max-width: 50ch;
     }
-    .work-body { font-size: 0.88rem; line-height: 1.65; color: rgba(13,13,13,0.62); }
-
-    /* Proof section */
-    .proof-section { border-bottom: 3px solid var(--ink); }
-    .proof-row {
-      display: grid; grid-template-columns: 200px 1fr;
-      border-bottom: 1px solid rgba(13,13,13,0.12);
-      padding: 2rem 4rem;
+    a {
+      color: var(--vermillion);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(217, 68, 37, 0.4);
+      transition: border-color 0.12s;
     }
-    .proof-row:last-child { border-bottom: none; }
-    .proof-client {
-      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase; color: rgba(13,13,13,0.35);
-      padding-right: 2rem; padding-top: 0.1rem;
+    a:hover { border-bottom-color: var(--vermillion); }
+    .inline-b { color: var(--yolk); }
+    .inline-b .dot { color: var(--vermillion); }
+    .fallback {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--yolk-dim);
+      margin-top: 2rem;
+      letter-spacing: 0.05em;
     }
-    .proof-content { }
-    .proof-service {
-      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase; color: var(--vermillion);
-      margin-bottom: 0.5rem;
-    }
-    .proof-line {
-      font-size: 0.9rem; line-height: 1.6; color: rgba(13,13,13,0.7);
-    }
-
-    /* Footer */
-    footer {
-      padding: 1.75rem 4rem; display: flex; justify-content: space-between;
-      align-items: center; flex-wrap: wrap; gap: 1rem;
-      border-top: 3px solid var(--ink);
-    }
-    .footer-copy {
-      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem;
-      letter-spacing: 0.15em; text-transform: uppercase; color: rgba(13,13,13,0.25);
-    }
-    .footer-links { display: flex; gap: 2rem; list-style: none; }
-    .footer-links a {
-      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem;
-      letter-spacing: 0.15em; text-transform: uppercase; color: rgba(13,13,13,0.35);
-      text-decoration: none; transition: color 0.12s;
-      padding: 0.5rem 0; display: inline-block;
-    }
-    .footer-links a:hover { color: var(--vermillion); }
-
-    /* Reveal animation — CSS-driven, JS adds classes */
-    @keyframes revealUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .reveal-pending { opacity: 0; }
-    .reveal-done { animation: revealUp 0.5s ease forwards; }
-
-    @media (max-width: 768px) {
-      .hero { padding: 3rem 1.5rem 2.5rem; }
-      .subscribe-section { padding: 3rem 1.5rem; }
-      .work-section { grid-template-columns: 1fr; }
-      .work-card { border-right: none; border-bottom: 3px solid var(--ink); }
-      .work-card:last-child { border-bottom: none; }
-      .proof-row { grid-template-columns: 1fr; padding: 1.5rem; gap: 0.5rem; }
-      .proof-client { padding-right: 0; margin-bottom: 0.5rem; }
-footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
-    }
-    .brand-b { text-transform: none; }
-    .brand-dot { color: var(--vermillion); }
   </style>
 </head>
 <body>
-
 <div class="stripe"></div>
-
-<nav class="nav">
-  <a href="https://b.studio" class="nav-mark"><span class="brand-b">b<span class="brand-dot">.</span></span></a>
-  <a href="#subscribe" class="nav-link">Subscribe to Dispatch →</a>
-</nav>
-
-<section class="hero">
-  <p class="firm-label">Consulting, by Studio <span class="brand-b">b<span class="brand-dot">.</span></span></p>
-  <h1>We don't consult. <em>We embed.</em></h1>
-  <p class="hero-body">Operators don't need more advice. They need someone in the room. Built on AI and scar tissue. We don't send decks — we show up.</p>
-  <div class="cta-row">
-    <a href="https://dispatch.b.studio/subscribe" class="cta">Read Dispatch →</a>
-    <a href="https://meetings.hubspot.com/kevin-bibelhausen" class="cta-secondary" target="_blank" rel="noopener">or book a call</a>
-  </div>
-</section>
-
-<div class="stripe"></div>
-
-<!-- DISPATCH SUBSCRIBE -->
-<section class="subscribe-section" id="subscribe">
-  <div class="subscribe-inner">
-    <div class="subscribe-kicker">Dispatch, by Studio <span class="brand-b">b<span class="brand-dot">.</span></span></div>
-    <h2 class="subscribe-headline">Field notes from inside the operation.</h2>
-    <p class="subscribe-body">War stories and operational patterns from active engagements — anonymized, direct, and written for operators who want to know what's actually working. Not what consultants are selling.</p>
-    <div class="beehiiv-embed-container">
-      <iframe src="https://embeds.beehiiv.com/pub_82610f24-3f9f-4e24-89e2-7b445921e67f?slim=true" data-test-id="beehiiv-embed"
-        height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important;
-        background-color: transparent; width: 100%;"></iframe>
-    </div>
-    <p class="subscribe-secondary">Kevin also publishes <a href="https://dli.b.studio/subscribe">DLI, by Studio b.</a> — the open lower middle market lending index.</p>
-  </div>
-</section>
-
-<div class="stripe"></div>
-
-<div class="work-section">
-  <div class="work-card">
-    <p class="work-num">01</p>
-    <p class="work-title">ERP &amp; Systems</p>
-    <p class="work-body">We stand up, tune, and extend the ERP and business systems your operations actually depend on. Configuration, customization, integrations — done by people who've lived inside the same problems.</p>
-  </div>
-  <div class="work-card">
-    <p class="work-num">02</p>
-    <p class="work-title">AI &amp; Automation</p>
-    <p class="work-body">We wire AI into the operation. Not a strategy presentation about AI — the actual tooling, the pipelines, the automations that remove the manual work. Built and running before we leave the room.</p>
-  </div>
-  <div class="work-card">
-    <p class="work-num">03</p>
-    <p class="work-title">Growth &amp; Capital</p>
-    <p class="work-body">When the operational work reveals a capital need, we don't hand you a referral. Capital, by Studio <span class="brand-b">b<span class="brand-dot">.</span></span> is the same firm. The consulting relationship is how we know who to back — and how operators access our network.</p>
-  </div>
+<div class="card">
+  <span class="bmark">b<span class="dot">.</span></span>
+  <p class="kicker">// Consulting moved</p>
+  <h1>Consulting now lives inside Markdown<span class="dot">.</span></h1>
+  <p>Consulting at Studio <span class="inline-b">b<span class="dot">.</span></span> now lives inside <a href="https://markdown.b.studio/">Markdown</a> &mdash; the operator newsletter where the work gets written down. Same writer, broader scope.</p>
+  <p class="fallback">Redirecting to <a href="https://markdown.b.studio/">markdown.b.studio</a>&hellip;</p>
 </div>
-
-<section class="proof-section">
-  <div class="proof-row">
-    <p class="proof-client">Wholesale distributor</p>
-    <div class="proof-content">
-      <p class="proof-service">ERP &amp; Systems</p>
-      <p class="proof-line">Stood up Acumatica ERP, built a fully automated CI/CD pipeline, and shipped a custom WMS from zero — all embedded inside their operations team. Systems running in production.</p>
-    </div>
-  </div>
-  <div class="proof-row">
-    <p class="proof-client">Fabricator / manufacturer</p>
-    <div class="proof-content">
-      <p class="proof-service">ERP &amp; Systems</p>
-      <p class="proof-line">Moved off entirely paper-based ledger accounting to cloud ERP with a Shopify storefront — six months from kickoff to production.</p>
-    </div>
-  </div>
-  <div class="proof-row">
-    <p class="proof-client">Financial services</p>
-    <div class="proof-content">
-      <p class="proof-service">AI &amp; Automation</p>
-      <p class="proof-line">Built a signal intelligence platform that processes thousands of data points per portfolio company. Research that used to take days now takes minutes. Running before we left the room.</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p class="footer-copy">&copy; 2026 Studio <span class="brand-b">b<span class="brand-dot">.</span></span> Consulting, LLC</p>
-  <ul class="footer-links">
-    <li><a href="https://b.studio">Studio b.</a></li>
-    <li><a href="https://capital.b.studio">Capital</a></li>
-    <li><a href="https://benchmarks.b.studio">Benchmarks</a></li>
-  </ul>
-</footer>
-
-<script>
-  // Use CSS animation via IntersectionObserver — falls back to visible if observer never fires
-  const revealEls = document.querySelectorAll('.work-section, .subscribe-section, .proof-section, .engagement-section');
-  revealEls.forEach(el => el.classList.add('reveal-pending'));
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('reveal-pending');
-        entry.target.classList.add('reveal-done');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.04 });
-  revealEls.forEach(el => observer.observe(el));
-  // Fallback: if page is fully loaded and elements are still hidden, show them
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.reveal-pending').forEach(el => {
-      el.classList.remove('reveal-pending');
-      el.classList.add('reveal-done');
-    });
-  });
-</script>
-
 </body>
 </html>
